@@ -1,2 +1,2 @@
 # csc043
-Genome scale model of Curtobacterium.
+Genome scale model of Paenibacillus.
