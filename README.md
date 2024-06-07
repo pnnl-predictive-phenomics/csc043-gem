@@ -18,7 +18,7 @@ This repository contains the continuous validation environment for an organism-s
 
 1. **Clone the Repository**
    ```
-   git clone https://github.com/pnnl-predictive-phenomics/csc043.git
+   git clone https://github.com/pnnl-predictive-phenomics/csc043-gem.git
    cd csc043
    ```
 
@@ -44,7 +44,7 @@ We welcome contributions to improve the model's quality and extend its capabilit
 
 ## License
 
-This project is licensed under the [License Name]. See the `LICENSE` file for details.
+This project is licensed under the [Apache 2.0](https://github.com/pnnl-predictive-phenomics/csc043-GEM/blob/main/LICENSE) See the `LICENSE` file for details.
 
 ## Contact
 
