@@ -1,32 +1,29 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[ ]:
-
-
 from memote.suite.cli.reports import diff
 import cobra
 import os
 import logging
 from cobra.manipulation.modify import rename_genes
-#from concerto.utils.biolog_help import add_biolog_exchanges
+from concerto.utils.biolog_help import add_biolog_exchanges
 from cobra.io import read_sbml_model
 import logging
 import pandas as pd
 import pathlib
 import sys
 import os
-sys.path.insert(0, "/Users/rodr579/Repos/Concerto/concerto")
+#sys.path.insert(0, "/Users/rodr579/Repos/Concerto/concerto")
 from concerto.utils import load_universal_model
 ##########
 _log = logging.getLogger()
 
-#_path = pathlib.Path(__file__).parent
-_path = pathlib.Path(os.getcwd())
+_path = pathlib.Path(__file__).parent
+#_path = pathlib.Path(os.getcwd())
 #_f_path = _path.joinpath('plate_to_bigg.csv').__str__()
 _f_path = _path.joinpath('plate_to_bigg.csv').__str__()
 
-starting_model = read_sbml_model("csc043.xml")
+starting_model = read_sbml_model("model.xml")
 
 def write_model(model):
     cobra.io.write_sbml_model(model, output_model_path)
@@ -86,19 +83,16 @@ def update_model():
 
 if __name__ == '__main__':
     update_model()
-    '''model_paths = [s_model_path, output_model_path]
+    model_paths = [s_model_path, output_model_path]
     diff(
         [
             *model_paths,
             '--filename', os.path.join(_file_path, 'model_differences.html'),
             '--experimental', os.path.join(_file_path, 'data', 'experiments.yml'),
-            # '--custom-tests', os.path.join(_file_path, 'custom_tests'),
+            '--custom-tests', os.path.join(_file_path, 'custom_tests'),
             '--exclusive', 'test_growth',
         ]
-    )'''
-
-
-# In[ ]:
+    )
 
 
 
