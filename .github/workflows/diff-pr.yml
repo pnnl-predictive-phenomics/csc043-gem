@@ -26,15 +26,15 @@ jobs:
     - name: Run memote on deployment branch
       run: |
         model=$(awk -F '=' '{if (! ($0 ~ /^;/) && $0 ~ /model/) print $2}' memote.ini | tr -d ' ')
-echo "Echo 1"
+        echo "model assignment"
         deployment=$(awk -F '=' '{if (! ($0 ~ /^;/) && $0 ~ /deployment/) print $2}' memote.ini | tr -d ' ')
-echo "$deployment"
+        echo "deployment"
         git show "origin/main:${model}" > "prev_${model}"
-echo "Echo 2"
+        echo "after git show"
         memote report diff --filename "diff${GITHUB_SHA}.html" "$model" "prev_${model}"
-echo "Echo 3"
+        echo "after memote diff"
         git checkout $deployment
-echo "Echo 4"
+        echo "after checkout"
         git pull
         git add "diff${GITHUB_SHA}.html"
         git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
