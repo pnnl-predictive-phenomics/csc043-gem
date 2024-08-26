@@ -1,0 +1,16 @@
+cd ../ .. 
+cd ../../\
+cd ../../
+ssh lint730@deception.pnnl.gov
+ssh lint730@deception.pnl.gov
+cd concerto/concerto/
+ls
+jupyter notebook
+jupyter notebook
+ls
+cd project
+cd Projects/
+ls
+cd ..
+cd concerto/
+ls
